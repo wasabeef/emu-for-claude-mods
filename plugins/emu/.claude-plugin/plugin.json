@@ -1,0 +1,11 @@
+{
+  "name": "emu",
+  "version": "0.2.0",
+  "description": "Start, stop and monitor iOS simulators and Android emulators from Claude Code",
+  "author": { "name": "wasabeef" },
+  "license": "MIT",
+  "homepage": "https://github.com/wasabeef/emu-for-claude-mods",
+  "repository": "https://github.com/wasabeef/emu-for-claude-mods",
+  "keywords": ["ios", "android", "simulator", "emulator", "mobile"],
+  "types": "./types/index.d.ts"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "emu-mods",
+  "description": "Claude Code mods for mobile developers: manage iOS simulators and Android emulators",
+  "owner": { "name": "wasabeef" },
+  "plugins": [
+    {
+      "name": "emu",
+      "source": "./plugins/emu",
+      "description": "Start, stop and monitor iOS simulators and Android emulators from Claude Code"
+    }
+  ]
+}
