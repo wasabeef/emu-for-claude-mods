@@ -11,6 +11,20 @@ Inspired by [wasabeef/emu](https://github.com/wasabeef/emu). This `emu` manages 
 - **Claude can use it too**: three tools let the model list, boot and shut down devices on its own.
 - **Honest about failures**: an AVD that cannot boot here is marked and never started; an emulator that quits during boot reports why.
 
+```
+2 running · 8 devices · tab / j k move · enter boot/stop · esc close
+
+iOS Simulators  1/4 running              Android Emulators  1/4 running
+▶ 1 iPhone 17 Pro iOS 26.3 ● ⏎ Stop        5 Pixel_9_API_36      emulator-5554 ● running
+  2 iPhone 17     iOS 26.3 ○ stopped       6 Pixel_8_API_35                    ○ stopped
+  3 iPhone 16e    iOS 26.3 ○ stopped       7 Pixel_Tablet_API_35               ○ stopped
+  4 iPad (A16)    iOS 26.3 ○ stopped       ✕ 1 unavailable (a: show)
+
+h: iOS l: Android j: down k: up a: all (+1) x: stop all (2) r: refresh c: close
+```
+
+<sub>The `/emu` pane in a wide terminal. The focused row shows the action `enter` will take.</sub>
+
 ## Requirements
 
 | | |
@@ -41,6 +55,19 @@ Then run `/reload-plugins`, or restart Claude Code.
 | `/emu stop-all` | Shut down every running device |
 | `/emu close` | Close the pane |
 | `/emu help` | Show usage |
+
+```
+> /emu list
+[ios] iPhone 17 Pro (iOS 26.3) - running - id: 6F1C2E0A-3B7D-4C1E-9A52-0D8E7F4B1C33
+[ios] iPhone 17 (iOS 26.3) - stopped - id: 2B9A41D7-8E6C-4F05-B3A1-7C2D9E0F5A18
+[android] Pixel_9_API_36 (emulator-5554) - running - id: Pixel_9_API_36
+[android] Pixel_8_API_35 - stopped - id: Pixel_8_API_35
+
+> /emu boot 17
+"17" is ambiguous:
+[ios] iPhone 17 Pro (iOS 26.3) - running - id: 6F1C2E0A-3B7D-4C1E-9A52-0D8E7F4B1C33
+[ios] iPhone 17 (iOS 26.3) - stopped - id: 2B9A41D7-8E6C-4F05-B3A1-7C2D9E0F5A18
+```
 
 `<device>` is a name substring, a UDID, an AVD name or an adb serial. It may be omitted when exactly one device is running. An ambiguous query lists the candidates instead of guessing.
 
